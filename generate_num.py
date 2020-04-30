@@ -1,6 +1,7 @@
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 import cv2
 import numpy as np
+from approx import *
 
 def generateNumPic(n):
     """
@@ -19,4 +20,10 @@ def generateNumPic(n):
     draw.text((5, 20), '8', font=font, fill=(255, 255, 255))
 
 
-generateNumPic(7000)
+# generateNumPic(7000)
+import os
+for root, dirs, files in os.walk(".", topdown=False):
+    for name in files:
+        if name.endswith('.jpg'):
+            pic = getSplitPic(name)
+            cv2.imwrite('gray' + name, pic)

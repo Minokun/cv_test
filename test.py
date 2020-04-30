@@ -16,6 +16,7 @@ def showImageList(image_list, name='test'):
     cv2.imshow(name, image)
     cv2.waitKey()
 
+
 src = cv2.imread('id-2.jpg')
 src_copy = src.copy()
 src_y, src_x = src.shape[0:2]
